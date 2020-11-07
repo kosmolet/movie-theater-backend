@@ -16,7 +16,10 @@ app.use(express.json({ limit: '50mb' }));
 app.use(cors());
 
 const users = require('./controllers/users');
-const tickets = require('./controllers/tickets');
+const reservations = require('./controllers/reservations');
+const movies = require('./controllers/movies');
+const showtime = require('./controllers/showtime');
+const cinemaroom = require('./controllers/cinemaroom');
 
 app.get('/', (req, res) => {
   logger.debug('working');
@@ -25,7 +28,10 @@ app.get('/', (req, res) => {
   });
 });
 
+app.use('/api/v1/movies', movies);
+app.use('/api/v1/showtime', showtime);
+app.use('/api/v1/cinemaroom', cinemaroom);
+app.use('/api/v1/reservations', reservations);
 app.use('/api/v1/users', users);
-app.use('/api/v1/users/:userId/tickets', tickets);
 
 module.exports = app;
