@@ -42,7 +42,8 @@
         {
           "devDependencies": true
         }
-      ]
+      ],
+      "properties": "never"
     }
   }
   

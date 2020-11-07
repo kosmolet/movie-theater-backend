@@ -26,6 +26,6 @@ const showtimeSchema = new Schema({
   },
 });
 
-const Showtime = mongoose.model('Showtime', showtimeSchema);
+const ShowTime = mongoose.model('Showtime', showtimeSchema);
 
-module.exports = Showtime;
+module.exports = ShowTime;

@@ -7,11 +7,11 @@ const movieSchema = new Schema({
   popularity: { type: String, required: true },
   poster_path: { type: String, required: true },
   backdrop_path: { type: String, required: true },
-  duration: { type: Number, required: true },
+  runtime: { type: Number, required: true },
   genre: { type: [String], required: true },
   release_date: { type: Date, required: true },
-  endDate: { type: Date, required: true },
   tmdb_id: { type: Number, required: true },
+  status: { type: String, required: true },
 });
 
 const Movie = mongoose.model('Movie', movieSchema);
