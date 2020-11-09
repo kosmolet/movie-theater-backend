@@ -3,7 +3,7 @@ GET http://localhost:5005/api/v1/reservations
 
 
 ### 3. GET reservations by ID: 
-GET http://localhost:5005/api/v1/reservations/5fa93401b87833478c3ade9e
+GET http://localhost:5005/api/v1/reservations/5fa93401b87833478c3ade9f
 
 ### 4a POST reservation
 POST http://localhost:5005/api/v1/reservations 
@@ -36,7 +36,7 @@ content-type: application/json
 }
 
 ### 5. Update(PATCH) reservations by ID:
-PATCH http://localhost:5005/api/v1/reservations/5fa93401b87833478c3ade9e
+PATCH http://localhost:5005/api/v1/reservations/5fa93401c87833478c3ade9f
 content-type: application/json
 
 {
@@ -52,4 +52,4 @@ content-type: application/json
 
 
 ### 5. DELETE reservations by ID  
-DELETE http://localhost:5005/api/v1/reservations/5fa71aab7a332b5a24c97496
+DELETE http://localhost:5005/api/v1/reservations/5fa71aab7a332b5a24c97495

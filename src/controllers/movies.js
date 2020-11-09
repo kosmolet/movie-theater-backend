@@ -10,7 +10,10 @@ router.get('/', async (req, res) => {
 
 router.get('/:movieId', async (req, res) => {
   try {
-    return res.json(req.movie);
+    const movie = await Movie.findById(req.params.movieId);
+    return !movie
+      ? res.status(404).json({ message: 'Movie with this ID does not exist' })
+      : res.send(movie);
   } catch (err) {
     return res.status(500).send(err);
   }
@@ -28,9 +31,12 @@ router.post('/', async (req, res) => {
 
 router.patch('/:movieId', async (req, res) => {
   try {
-    const movie = { _id: req.movieId, ...req.body };
-    await Movie.findByIdAndUpdate(req.params.movieId, { $set: req.body });
-    return res.send(movie);
+    const movie = await Movie.findByIdAndUpdate(req.params.movieId, {
+      $set: req.body,
+    });
+    return !movie
+      ? res.status(404).json({ message: 'Movie with this ID does not exist' })
+      : res.send(movie);
   } catch (e) {
     return res.status(500).send(e);
   }
@@ -39,22 +45,9 @@ router.patch('/:movieId', async (req, res) => {
 router.delete('/:movieId', async (req, res) => {
   try {
     const movie = await Movie.findByIdAndDelete(req.params.movieId);
-    return !movie ? res.sendStatus(404) : res.send(movie);
-  } catch (e) {
-    return res.status(500).send(e);
-  }
-});
-
-router.param('movieId', async (req, res, next) => {
-  try {
-    const movie = await Movie.findById(req.params.movieId);
-    if (!movie) {
-      res.status(404).json({ message: 'Movie with this ID does not exist' });
-    } else {
-      req.movie = movie;
-      req.movieId = req.params.movieId;
-      next();
-    }
+    return !movie
+      ? res.status(404).json({ message: 'Movie with this ID does not exist' })
+      : res.send(movie);
   } catch (e) {
     return res.status(500).send(e);
   }

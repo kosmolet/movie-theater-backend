@@ -2,7 +2,7 @@
 GET http://localhost:5005/api/v1/showtime
 
 ###2. Get showtime by ID
-GET http://localhost:5005/api/v1/showtime/5fa880c6dded804a54cadb75
+GET http://localhost:5005/api/v1/showtime/5fa92ea4b9773101fcc5d933
 
 ###3.a POST showtime
 POST http://localhost:5005/api/v1/showtime

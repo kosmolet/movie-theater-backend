@@ -4,13 +4,20 @@ const CinemaRoom = require('../models/cinemaroom');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  const allCinemarooms = await CinemaRoom.find();
-  return res.json(allCinemarooms);
+  try {
+    const allCinemarooms = await CinemaRoom.find({});
+    return res.json(allCinemarooms);
+  } catch (e) {
+    return res.status(500).send(e);
+  }
 });
 
 router.get('/:roomId', async (req, res) => {
   try {
-    return res.json(req.room);
+    const room = await CinemaRoom.findById(req.params.roomId);
+    return !room
+      ? res.status(404).json({ message: 'Room with this ID does not exist' })
+      : res.send(room);
   } catch (err) {
     return res.status(500).send(err);
   }
@@ -29,22 +36,9 @@ router.post('/', async (req, res) => {
 router.delete('/:roomId', async (req, res) => {
   try {
     const room = await CinemaRoom.findByIdAndDelete(req.params.roomId);
-    return !room ? res.sendStatus(404) : res.send(room);
-  } catch (e) {
-    return res.status(500).send(e);
-  }
-});
-
-router.param('roomId', async (req, res, next) => {
-  try {
-    const room = await CinemaRoom.findById(req.params.roomId);
-    if (!room) {
-      res.status(404).json({ message: 'Room with this ID does not exist' });
-    } else {
-      req.room = room;
-      req.roomId = req.params.roomId;
-      next();
-    }
+    return !room
+      ? res.status(404).json({ message: 'Room with this ID does not exist' })
+      : res.send(room);
   } catch (e) {
     return res.status(500).send(e);
   }

@@ -9,7 +9,10 @@ router.get('/', async (req, res) => {
 
 router.get('/:showtimeId', async (req, res) => {
   try {
-    return res.json(req.showtime);
+    const showtime = await ShowTime.findById(req.params.showtimeId);
+    return !showtime
+      ? res.status(404).json({ message: 'Showtime ID does not exist' })
+      : res.send(showtime);
   } catch (err) {
     return res.status(500).send(err);
   }
@@ -28,24 +31,12 @@ router.post('/', async (req, res) => {
 router.delete('/:showtimeId', async (req, res) => {
   try {
     const showtime = await ShowTime.findByIdAndDelete(req.params.showtimeId);
-    return !showtime ? res.sendStatus(404) : res.send(showtime);
+    return !showtime
+      ? res.status(404).json({ message: 'Showtime ID does not exist' })
+      : res.send(showtime);
   } catch (e) {
     return res.status(500).send(e);
   }
 });
 
-router.param('showtimeId', async (req, res, next) => {
-  try {
-    const showtime = await ShowTime.findById(req.params.showtimeId);
-    if (!showtime) {
-      res.status(404).json({ message: 'ShowTime with this ID does not exist' });
-    } else {
-      req.showtime = showtime;
-      req.showtimeId = req.params.showtimeId;
-      next();
-    }
-  } catch (e) {
-    return res.status(500).send(e);
-  }
-});
 module.exports = router;

@@ -10,7 +10,10 @@ router.get('/', async (req, res) => {
 
 router.get('/:reservationId', async (req, res) => {
   try {
-    return res.json(req.reservation);
+    const reservation = await Reservation.findById(req.params.reservationId);
+    return !reservation
+      ? res.status(404).json({ message: 'Reservation ID does not exist' })
+      : res.send(reservation);
   } catch (err) {
     return res.status(500).send(err);
   }
@@ -28,9 +31,15 @@ router.post('/', async (req, res) => {
 
 router.patch('/:reservationId', async (req, res) => {
   try {
-    const reservation = { _id: req.reservationId, ...req.body };
-    await Reservation.findByIdAndUpdate(req.params.reservationId, { $set: req.body });
-    return res.send(reservation);
+    const reservation = await Reservation.findByIdAndUpdate(
+      req.params.reservationId,
+      {
+        $set: req.body,
+      }
+    );
+    return !reservation
+      ? res.status(404).json({ message: 'Reservation ID does not exist' })
+      : res.send(reservation);
   } catch (e) {
     return res.status(500).send(e);
   }
@@ -38,25 +47,12 @@ router.patch('/:reservationId', async (req, res) => {
 
 router.delete('/:reservationId', async (req, res) => {
   try {
-    const reservation = await Reservation.findByIdAndDelete(req.params.reservationId);
-    return !reservation ? res.sendStatus(404) : res.send(reservation);
-  } catch (e) {
-    return res.status(500).send(e);
-  }
-});
-
-router.param('reservationId', async (req, res, next) => {
-  try {
-    const reservation = await Reservation.findById(req.params.reservationId);
-    if (!reservation) {
-      res
-        .status(404)
-        .json({ message: 'Reservation with this ID does not exist' });
-    } else {
-      req.reservation = reservation;
-      req.reservationId = req.params.reservationId;
-      next();
-    }
+    const reservation = await Reservation.findByIdAndDelete(
+      req.params.reservationId
+    );
+    return !reservation
+      ? res.status(404).json({ message: 'Reservation ID does not exist' })
+      : res.send(reservation);
   } catch (e) {
     return res.status(500).send(e);
   }

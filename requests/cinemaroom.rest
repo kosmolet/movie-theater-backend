@@ -2,7 +2,7 @@
 GET http://localhost:5005/api/v1/cinemarooms
 
 ###2. Get cinemroom by ID
-GET http://localhost:5005/api/v1/cinemarooms/5fa880c6dded804a54cadb75
+GET http://localhost:5005/api/v1/cinemarooms/5fa93fe12423434148645470
 
 ###3. POST
 POST http://localhost:5005/api/v1/cinemarooms
@@ -31,4 +31,4 @@ content-type: application/json
 
 
 ###5. DELETE cinemroom by ID
-DELETE http://localhost:5005/api/v1/cinemarooms/5fa87f5f2ca40c50e43688a1
+DELETE http://localhost:5005/api/v1/cinemarooms/5fa93fe12423434148645470

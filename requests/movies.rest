@@ -3,18 +3,16 @@ GET http://localhost:5005/api/v1/movies
 
 
 ### 3. GET movie by ID: 
-GET http://localhost:5005/api/v1/movies/5fa6f46899169350dc3744a5
+GET http://localhost:5005/api/v1/movies/5fa6fdaf99169350dc3744ad
 
 ### 4. Update(PATCH) movie by ID:
-PATCH http://localhost:5005/api/v1/movies/5fa71aab7a332b5a24c97496
+PATCH http://localhost:5005/api/v1/movies/5fa6fdaf99169350dc3744ad
 content-type: application/json
 
 {
-    "popularity": 1429,
-    "runtime": 90,
-    "tmdb_id": 529203
+    "popularity": 118
 }
 
 
 ### 5. DELETE movie by ID  
-DELETE http://localhost:5005/api/v1/movies/5fa71aab7a332b5a24c97496
+DELETE http://localhost:5005/api/v1/movies/5fa71aab7a332b5a24c97497
