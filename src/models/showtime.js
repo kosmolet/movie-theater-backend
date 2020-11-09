@@ -11,7 +11,7 @@ const showtimeSchema = new Schema({
     required: true,
   },
   endAt: {
-    type: String,
+    type: Date,
     required: true,
   },
   movieId: {

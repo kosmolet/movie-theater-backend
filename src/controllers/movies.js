@@ -9,7 +9,11 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:movieId', async (req, res) => {
-  res.send(req.movie);
+  try {
+    return res.json(req.movie);
+  } catch (err) {
+    return res.status(500).send(err);
+  }
 });
 
 router.post('/', async (req, res) => {

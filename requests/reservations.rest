@@ -1,0 +1,55 @@
+#### 2. Get ALL reservations:
+GET http://localhost:5005/api/v1/reservations
+
+
+### 3. GET reservations by ID: 
+GET http://localhost:5005/api/v1/reservations/5fa93401b87833478c3ade9e
+
+### 4a POST reservation
+POST http://localhost:5005/api/v1/reservations 
+content-type: application/json
+
+{
+    "title": "The Witches Reservation",
+    "seats": [19,20],
+    "ticketPrice": 40,
+    "showtimeId": "5fa92e9db9773101fcc5d933",
+    "username": "Jerry",
+    "email": "jerrymail123@gmail.com",
+    "phone": "0722345632",
+    "isPaymentSucceed": true
+}
+
+### 4b POST reservation
+POST http://localhost:5005/api/v1/reservations 
+content-type: application/json
+
+{
+    "title": "ReservationNotPaid",
+    "seats": [17],
+    "ticketPrice": 15,
+    "showtimeId": "5fa92ed0b9773101fcc5d935",
+    "username": "Kate",
+    "email": "katemail123@gmail.com",
+    "phone": "0729995632",
+    "isPaymentSucceed": false
+}
+
+### 5. Update(PATCH) reservations by ID:
+PATCH http://localhost:5005/api/v1/reservations/5fa93401b87833478c3ade9e
+content-type: application/json
+
+{
+    "title": "The Witches Reservation",
+    "seats": [19,20],
+    "ticketPrice": 30,
+    "showtimeId": "5fa92e9db9773101fcc5d933",
+    "username": "Jerry",
+    "email": "jerrymail123@gmail.com",
+    "phone": "0722345632",
+    "isPaymentSucceed": true
+}
+
+
+### 5. DELETE reservations by ID  
+DELETE http://localhost:5005/api/v1/reservations/5fa71aab7a332b5a24c97496

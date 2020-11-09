@@ -3,7 +3,7 @@ GET http://localhost:5005/api/v1/movies
 
 
 ### 3. GET movie by ID: 
-GET http://localhost:5005/api/v1/movies/5fa71aab7a332b5a24c97496
+GET http://localhost:5005/api/v1/movies/5fa6f46899169350dc3744a5
 
 ### 4. Update(PATCH) movie by ID:
 PATCH http://localhost:5005/api/v1/movies/5fa71aab7a332b5a24c97496

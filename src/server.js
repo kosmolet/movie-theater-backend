@@ -18,8 +18,8 @@ app.use(cors());
 const users = require('./controllers/users');
 const reservations = require('./controllers/reservations');
 const movies = require('./controllers/movies');
-// const showtime = require('./controllers/showtime');
-// const cinemaroom = require('./controllers/cinemaroom');
+const showtime = require('./controllers/showtime');
+const cinemaroom = require('./controllers/cinemaroom');
 
 app.get('/', (req, res) => {
   logger.debug('working');
@@ -29,8 +29,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/v1/movies', movies);
-// app.use('/api/v1/showtime', showtime);
-// app.use('/api/v1/cinemaroom', cinemaroom);
+app.use('/api/v1/showtime', showtime);
+app.use('/api/v1/cinemarooms', cinemaroom);
 app.use('/api/v1/reservations', reservations);
 app.use('/api/v1/users', users);
 
