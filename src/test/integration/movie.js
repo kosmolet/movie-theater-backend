@@ -41,7 +41,7 @@ describe('Testing Movies Endpoints ', () => {
         backdrop_path:
           'https://image.tmdb.org/t/p/original/mqmHhAf7OhJq5Tq81p7wFI0Fnde.jpg',
         runtime: 90,
-        genre: ["Adventure","Family","Fantasy"],
+        genre: ['Adventure', 'Family', 'Fantasy'],
         release_date: '2020-11-25',
         tmdb_id: 529203,
         status: 'Released',
@@ -183,7 +183,7 @@ describe('Testing Movies Endpoints ', () => {
         backdrop_path:
           'https://image.tmdb.org/t/p/original/mqmHhAf7OhJq5Tq81p7wFI0Fnde.jpg',
         runtime: 90,
-        genre: ['Adventure','Family','Fantasy'],
+        genre: ['Adventure', 'Family', 'Fantasy'],
         release_date: '2020-11-25',
         tmdb_id: 529203,
         status: 'Released',
