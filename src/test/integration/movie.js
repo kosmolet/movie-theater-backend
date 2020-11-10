@@ -59,6 +59,9 @@ describe('Testing Movies Endpoints ', () => {
       );
       expect(response.body[0].runtime).to.equal(expectedMovie.runtime);
       expect(response.body[0].genre).to.have.same.members(expectedMovie.genre);
+      expect(response.body[0].release_date).to.equal(
+        '2020-11-25T00:00:00.000Z'
+      );
       expect(response.body[0].tmdb_id).to.equal(expectedMovie.tmdb_id);
       expect(response.body[0].status).to.equal(expectedMovie.status);
     });
@@ -133,6 +136,7 @@ describe('Testing Movies Endpoints ', () => {
       expect(response.body.backdrop_path).to.equal(foundMovie.backdrop_path);
       expect(response.body.runtime).to.equal(foundMovie.runtime);
       expect(response.body.genre).to.have.same.members(foundMovie.genre);
+      expect(response.body.release_date).to.equal('2020-11-25T00:00:00.000Z');
       expect(response.body.tmdb_id).to.equal(foundMovie.tmdb_id);
       expect(response.body.status).to.equal(foundMovie.status);
     });
