@@ -9,6 +9,11 @@ const ShowTimeSchema = new Schema(
     takenSeats: { type: [Number], required: true },
     city: { type: String, required: true },
     ticketPrice: { type: Number, required: true },
+    movie: {
+      type: Schema.Types.ObjectId,
+      ref: 'Movie',
+      required: true,
+    },
     reservations: [
       {
         type: Schema.Types.ObjectId,

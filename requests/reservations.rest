@@ -1,55 +1,58 @@
+GET http://localhost:5005/api/v1/movies/
 #### 2. Get ALL reservations:
-GET http://localhost:5005/api/v1/movies/5faec7c89c8a9041485473d2/showtimes/
+GET http://localhost:5005/api/v1/movies/5fb020cc92852c59b0bc1e85/showtimes/
 
 
-### 3. GET reservations by ID: 
-GET http://localhost:5005/api/v1/movies/5faec7c89c8a9041485473d2/showtimes/5faed3b8c7de0d2a98042a40/reservations 
+### 3. GET reservations from showtime: 
+GET http://localhost:5005/api/v1/movies/5fb020cc92852c59b0bc1e85/showtimes/5fb04d5da0ec6e0cdc4891e1/reservations 
 
-### showtimes/5faed3b8c7de0d2a98042a40/reservations
+### 
+GET http://localhost:5005/api/v1/movies/5fb020cc92852c59b0bc1e85/showtimes/5fb04d5da0ec6e0cdc4891e1/reservations/5fb04fc1a0ec6e0cdc4891e6
 
 ### 4a POST reservation
-POST http://localhost:5005/api/v1/movies/5faec7c89c8a9041485473d2/showtimes/5faed3b8c7de0d2a98042a40/reservations
+POST http://localhost:5005/api/v1/movies/5fb020cc92852c59b0bc1e85/showtimes/5fb04d5da0ec6e0cdc4891e1/reservations
 content-type: application/json
 
 {
-    "username": "The Witches Reservation",
-    "email": "jerrymail123@gmail.com",
+    "username": "ticket buyer",
+    "email": "buyermail123@gmail.com",
     "isPaymentSucceed": true,
     "seats": [19,20],
     "totalPrice": 40,
-    "notes": "5fa92e9db9773101fcc5d933"
+    "notes": "movie title can be here",
+    "showtime": "5fb04d5da0ec6e0cdc4891e1"
+
 }
 
 ### 4b POST reservation
-POST http://localhost:5005/api/v1/reservations 
+POST http://localhost:5005/api/v1/movies/5fb020cc92852c59b0bc1e85/showtimes/5fb04d5da0ec6e0cdc4891e1/reservations
 content-type: application/json
 
 {
-    "title": "ReservationNotPaid",
-    "seats": [17],
-    "ticketPrice": 15,
-    "showtimeId": "5fa92ed0b9773101fcc5d935",
-    "username": "Kate",
-    "email": "katemail123@gmail.com",
-    "phone": "0729995632",
-    "isPaymentSucceed": false
+    "username": "ticket buyer second2",
+    "email": "secondbuyermail123@gmail.com",
+    "isPaymentSucceed": false,
+    "seats": [1],
+    "totalPrice": 20,
+    "notes": "movie title can be here2",
+    "showtime": "5fb04d5da0ec6e0cdc4891e1"
+
 }
 
 ### 5. Update(PATCH) reservations by ID:
-PATCH http://localhost:5005/api/v1/reservations/5fa93401c87833478c3ade9f
+PATCH http://localhost:5005/api/v1/movies/5fb020cc92852c59b0bc1e85/showtimes/5fb04d5da0ec6e0cdc4891e1/reservations/5fb04fc1a0ec6e0cdc4891e6
 content-type: application/json
 
 {
-    "title": "The Witches Reservation",
-    "seats": [19,20],
-    "ticketPrice": 30,
-    "showtimeId": "5fa92e9db9773101fcc5d933",
-    "username": "Jerry",
-    "email": "jerrymail123@gmail.com",
-    "phone": "0722345632",
-    "isPaymentSucceed": true
+    "username": "ticket buyer second",
+    "email": "secondbuyermail123@gmail.com",
+    "isPaymentSucceed": true,
+    "seats": [1],
+    "totalPrice": 20,
+    "notes": "movie title can be here2"
+
 }
 
 
 ### 5. DELETE reservations by ID  
-DELETE http://localhost:5005/api/v1/reservations/5fa71aab7a332b5a24c97495
+DELETE http://localhost:5005/api/v1/movies/5fb020cc92852c59b0bc1e85/showtimes/5fb04d5da0ec6e0cdc4891e1/reservations/5fb050b4a0ec6e0cdc4891e7
