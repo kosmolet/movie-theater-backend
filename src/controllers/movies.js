@@ -53,4 +53,11 @@ router.delete('/:movieId', async (req, res) => {
   }
 });
 
+router.get('/:movieId/showtimes', async (req, res) => {
+  const foundMovie = await Movie.find({
+    _id: req.params.movieId,
+  }).populate('showtimes');
+  return res.json(foundMovie);
+});
+
 module.exports = router;

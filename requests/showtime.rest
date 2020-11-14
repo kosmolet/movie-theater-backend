@@ -1,57 +1,64 @@
 ###1. Get all showtime
-GET http://localhost:5005/api/v1/showtime
+GET http://localhost:5005/api/v1/movies/5faec7c89c8a9041485473d2
 
 ###2. Get showtime by ID
-GET http://localhost:5005/api/v1/showtime/5fa92ea4b9773101fcc5d933
+GET http://localhost:5005/api/v1/movies/5faec7c89c8a9041485473d2/showtimes/5faed4e2c7de0d2a98042a42
 
+
+###2. Get showtime by ID
+GET http://localhost:5005/api/v1/movies/5faec7c89c8a9041485473d2/showtimes/5faed4e2c7de0d2a98042a42/reservations
 ###3.a POST showtime
-POST http://localhost:5005/api/v1/showtime
+POST http://localhost:5005/api/v1/movies/5faec7c89c8a9041485473d2/showtimes
 content-type: application/json
 
 {
-    "startDate": "2020-12-01",
-    "startAt": "12:30",
-    "endAt": "2020-12-01",
-    "movieId": "5fa6f46899169350dc3744a5",
-    "cinemaRoomId": "5fa880c6dded804a54cadb75"
+    "startAt": "2020-12-01T12:30:00.000Z",
+    "endAt": "2020-12-01T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "takenSeats": [3,7,22],
+    "city": "Stockholm",
+    "ticketPrice": 20
 }
 
 ###3.b POST showtime
-POST http://localhost:5005/api/v1/showtime
+POST http://localhost:5005/api/v1/movies/5faec7c89c8a9041485473d2/showtimes
 content-type: application/json
 
 {
-    "startDate": "2020-12-02",
-    "startAt": "14:30",
-    "endAt": "2020-12-02",
-    "movieId": "5fa6f46899169350dc3744a5",
-    "cinemaRoomId": "5fa880c6dded804a54cadb75"
+    "startAt": "2020-12-01T16:30:00.000Z",
+    "endAt": "2020-12-01T18:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "takenSeats": [15],
+    "city": "Stockholm",
+    "ticketPrice": 20
 }
 
 ####3.c
-POST http://localhost:5005/api/v1/showtime
+POST http://localhost:5005/api/v1/movies/5faec7c89c8a9041485473d2/showtimes
 content-type: application/json
 
 {
-    "startDate": "2020-12-04",
-    "startAt": "15:30",
-    "endAt": "2020-12-04",
-    "movieId": "5fa6f46899169350dc3744a5",
-    "cinemaRoomId": "5fa880c6dded804a54cadb75"
+    "startAt": "2020-12-01T20:00:00.000Z",
+    "endAt": "2020-12-01T22:00:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "takenSeats": [1,5,25],
+    "city": "Stockholm",
+    "ticketPrice": 20
 }
 
-###3.d POST showtime
-POST http://localhost:5005/api/v1/showtime
+###3.d PUT showtime
+PUT http://localhost:5005/api/v1/movies/5faec7c89c8a9041485473d2/showtimes/5faef0939c6021691488fd39
 content-type: application/json
 
 {
-    "startDate": "2020-12-05",
-    "startAt": "21:30",
-    "endAt": "2020-12-05",
-    "movieId": "5fa6f46899169350dc3744a5",
-    "cinemaRoomId": "5fa880c6dded804a54cadb75"
+    "startAt": "2020-12-01T20:30:00.000Z",
+    "endAt": "2020-12-01T22:00:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "takenSeats": [1,5,25],
+    "city": "Stockholm3",
+    "ticketPrice": 20
 }
 
 
 ###5. DELETE showtime by ID
-DELETE http://localhost:5005/api/v1/showtime/5fa92aea46d63857f41c0402
+DELETE http://localhost:5005/api/v1/movies/5faec7c89c8a9041485473d2/showtimes/5faef1e69c6021691488fd3c

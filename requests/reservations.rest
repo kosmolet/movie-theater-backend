@@ -1,23 +1,23 @@
 #### 2. Get ALL reservations:
-GET http://localhost:5005/api/v1/reservations
+GET http://localhost:5005/api/v1/movies/5faec7c89c8a9041485473d2/showtimes/
 
 
 ### 3. GET reservations by ID: 
-GET http://localhost:5005/api/v1/reservations/5fa93401b87833478c3ade9f
+GET http://localhost:5005/api/v1/movies/5faec7c89c8a9041485473d2/showtimes/5faed3b8c7de0d2a98042a40/reservations 
+
+### showtimes/5faed3b8c7de0d2a98042a40/reservations
 
 ### 4a POST reservation
-POST http://localhost:5005/api/v1/reservations 
+POST http://localhost:5005/api/v1/movies/5faec7c89c8a9041485473d2/showtimes/5faed3b8c7de0d2a98042a40/reservations
 content-type: application/json
 
 {
-    "title": "The Witches Reservation",
-    "seats": [19,20],
-    "ticketPrice": 40,
-    "showtimeId": "5fa92e9db9773101fcc5d933",
-    "username": "Jerry",
+    "username": "The Witches Reservation",
     "email": "jerrymail123@gmail.com",
-    "phone": "0722345632",
-    "isPaymentSucceed": true
+    "isPaymentSucceed": true,
+    "seats": [19,20],
+    "totalPrice": 40,
+    "notes": "5fa92e9db9773101fcc5d933"
 }
 
 ### 4b POST reservation

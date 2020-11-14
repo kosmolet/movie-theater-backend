@@ -15,11 +15,9 @@ if (['development', 'production'].includes(process.env.NODE_ENV)) {
 app.use(express.json({ limit: '50mb' }));
 app.use(cors());
 
-const users = require('./controllers/users');
 const reservations = require('./controllers/reservations');
 const movies = require('./controllers/movies');
-const showtime = require('./controllers/showtime');
-const cinemaroom = require('./controllers/cinemaroom');
+const showtimes = require('./controllers/showtimes');
 
 app.get('/', (req, res) => {
   logger.debug('working');
@@ -29,9 +27,10 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/v1/movies', movies);
-app.use('/api/v1/showtime', showtime);
-app.use('/api/v1/cinemarooms', cinemaroom);
-app.use('/api/v1/reservations', reservations);
-app.use('/api/v1/users', users);
+app.use('/api/v1/movies/:movieId/showtimes', showtimes);
+app.use(
+  '/api/v1/movies/:movieId/showtimes/:showtimeId/reservations',
+  reservations
+);
 
 module.exports = app;

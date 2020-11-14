@@ -15,4 +15,4 @@ content-type: application/json
 
 
 ### 5. DELETE movie by ID  
-DELETE http://localhost:5005/api/v1/movies/5fa71aab7a332b5a24c97497
+DELETE http://localhost:5005/api/v1/movies/5fab41ee2979a10310800b81
