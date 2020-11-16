@@ -36,12 +36,10 @@ describe('Testing Movies Endpoints ', () => {
         overview:
           "After leaving their cave, the Croods encounter their biggest threat since leaving: another family called the Bettermans, who claim to be better and evolved. But after Eep and the Bettermans' only daughter escape, the two families must put aside their differences to save them.",
         popularity: 151,
-        poster_path:
-          'https://image.tmdb.org/t/p/w342/8u1JT7w94Mi20pH3UYv2gUnyXSY.jpg',
-        backdrop_path:
-          'https://image.tmdb.org/t/p/original/mqmHhAf7OhJq5Tq81p7wFI0Fnde.jpg',
+        poster_path: '/8u1JT7w94Mi20pH3UYv2gUnyXSY.jpg',
+        backdrop_path: '/mqmHhAf7OhJq5Tq81p7wFI0Fnde.jpg',
         runtime: 90,
-        genre: ['Adventure', 'Family', 'Fantasy'],
+        genres: ['Adventure', 'Family', 'Fantasy'],
         release_date: '2020-11-25',
         tmdb_id: 529203,
         status: 'Released',
@@ -58,7 +56,7 @@ describe('Testing Movies Endpoints ', () => {
         expectedMovie.backdrop_path
       );
       expect(response.body[0].runtime).to.equal(expectedMovie.runtime);
-      expect(response.body[0].genre).to.have.same.members(expectedMovie.genre);
+      expect(response.body[0].genres).to.have.same.members(expectedMovie.genres);
       expect(response.body[0].release_date).to.equal(
         '2020-11-25T00:00:00.000Z'
       );
@@ -79,7 +77,7 @@ describe('Testing Movies Endpoints ', () => {
         backdrop_path:
           'https://image.tmdb.org/t/p/original/mqmHhAf7OhJq5Tq81p7wFI0Fnde.jpg',
         runtime: 90,
-        genre: ['Adventure', 'Family', 'Fantasy'],
+        genres: ['Adventure', 'Family', 'Fantasy'],
         release_date: '2020-11-25',
         tmdb_id: 529203,
         status: 'Released',
@@ -118,7 +116,7 @@ describe('Testing Movies Endpoints ', () => {
           backdrop_path:
             'https://image.tmdb.org/t/p/original/mqmHhAf7OhJq5Tq81p7wFI0Fnde.jpg',
           runtime: 90,
-          genre: ['Adventure', 'Family', 'Fantasy'],
+          genres: ['Adventure', 'Family', 'Fantasy'],
           release_date: '2020-11-25',
           tmdb_id: 529203,
           status: 'Released',
@@ -135,7 +133,7 @@ describe('Testing Movies Endpoints ', () => {
       expect(response.body.poster_path).to.equal(foundMovie.poster_path);
       expect(response.body.backdrop_path).to.equal(foundMovie.backdrop_path);
       expect(response.body.runtime).to.equal(foundMovie.runtime);
-      expect(response.body.genre).to.have.same.members(foundMovie.genre);
+      expect(response.body.genres).to.have.same.members(foundMovie.genres);
       expect(response.body.release_date).to.equal('2020-11-25T00:00:00.000Z');
       expect(response.body.tmdb_id).to.equal(foundMovie.tmdb_id);
       expect(response.body.status).to.equal(foundMovie.status);
@@ -154,7 +152,7 @@ describe('Testing Movies Endpoints ', () => {
         backdrop_path:
           'https://image.tmdb.org/t/p/original/mqmHhAf7OhJq5Tq81p7wFI0Fnde.jpg',
         runtime: 90,
-        genre: ['Adventure', 'Family', 'Fantasy'],
+        genres: ['Adventure', 'Family', 'Fantasy'],
         release_date: '2020-11-25',
         tmdb_id: 529203,
         status: 'Released',
@@ -187,7 +185,7 @@ describe('Testing Movies Endpoints ', () => {
         backdrop_path:
           'https://image.tmdb.org/t/p/original/mqmHhAf7OhJq5Tq81p7wFI0Fnde.jpg',
         runtime: 90,
-        genre: ['Adventure', 'Family', 'Fantasy'],
+        genres: ['Adventure', 'Family', 'Fantasy'],
         release_date: '2020-11-25',
         tmdb_id: 529203,
         status: 'Released',
