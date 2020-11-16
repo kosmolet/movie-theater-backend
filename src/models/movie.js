@@ -9,7 +9,7 @@ const movieSchema = new Schema(
     poster_path: { type: String, required: true },
     backdrop_path: { type: String, required: true },
     runtime: { type: Number, required: true },
-    genre: { type: [String], required: true },
+    genres: { type: [String], required: true },
     release_date: { type: Date, required: true },
     tmdb_id: { type: Number, required: true },
     status: { type: String, required: true },
