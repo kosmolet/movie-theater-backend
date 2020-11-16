@@ -56,7 +56,9 @@ describe('Testing Movies Endpoints ', () => {
         expectedMovie.backdrop_path
       );
       expect(response.body[0].runtime).to.equal(expectedMovie.runtime);
-      expect(response.body[0].genres).to.have.same.members(expectedMovie.genres);
+      expect(response.body[0].genres).to.have.same.members(
+        expectedMovie.genres
+      );
       expect(response.body[0].release_date).to.equal(
         '2020-11-25T00:00:00.000Z'
       );
