@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
 const pino = require('pino');
 const expressLogger = require('express-pino-logger');
@@ -12,12 +13,18 @@ if (['development', 'production'].includes(process.env.NODE_ENV)) {
   app.use(expressLogger({ logger }));
 }
 
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(bodyParser.json());
+
 app.use(express.json({ limit: '50mb' }));
 app.use(cors());
 
 const reservations = require('./controllers/reservations');
 const movies = require('./controllers/movies');
 const showtimes = require('./controllers/showtimes');
+// const payments = require('./controllers/paymentsSession');
+const payments = require('./controllers/payments');
 
 app.get('/', (req, res) => {
   logger.debug('working');
@@ -32,5 +39,7 @@ app.use(
   '/api/v1/movies/:movieId/showtimes/:showtimeId/reservations',
   reservations
 );
+// app.use('/api/v1/create-session', payments);
+app.use('/api/v1/create-payment-intent', payments);
 
 module.exports = app;
