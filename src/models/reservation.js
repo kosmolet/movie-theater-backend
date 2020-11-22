@@ -8,7 +8,6 @@ const ReservationSchema = new Schema(
     isPaymentSucceed: { type: Boolean, default: false, required: true },
     seats: { type: [Number], required: true },
     totalPrice: { type: Number, required: true },
-    notes: { type: String },
     showtime: {
       type: Schema.Types.ObjectId,
       ref: 'ShowTime',

@@ -6,7 +6,7 @@ const ShowTimeSchema = new Schema(
     startAt: { type: Date, required: true },
     endAt: { type: Date, required: true },
     hallName: { type: String, required: true },
-    takenSeats: { type: [Number], required: true },
+    unavailableSeats: { type: [Number], required: true },
     city: { type: String, required: true },
     ticketPrice: { type: Number, required: true },
     movie: {
