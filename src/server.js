@@ -23,7 +23,7 @@ app.use(cors());
 const reservations = require('./controllers/reservations');
 const movies = require('./controllers/movies');
 const showtimes = require('./controllers/showtimes');
-// const payments = require('./controllers/paymentsSession');
+const paysession = require('./controllers/paymentsSession');
 const payments = require('./controllers/payments');
 
 app.get('/', (req, res) => {
@@ -41,5 +41,6 @@ app.use(
 );
 // app.use('/api/v1/create-session', payments);
 app.use('/api/v1/create-payment-intent', payments);
+app.use('/api/v1/checkout-session', paysession);
 
 module.exports = app;
