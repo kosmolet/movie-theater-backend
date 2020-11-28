@@ -1,6 +1,7 @@
-/* eslint-disable default-case */
 const express = require('express');
 const Stripe = require('stripe');
+
+const ticketPrice = process.env.PRICE;
 
 const paymentSessionRouter = express.Router();
 
@@ -10,6 +11,7 @@ const stripe = new Stripe(STRIPE_SK);
 paymentSessionRouter.post('/', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
+    customer_email: req.body.email,
     line_items: [
       {
         price_data: {
@@ -18,12 +20,18 @@ paymentSessionRouter.post('/', async (req, res) => {
             name: req.body.name,
             images: [req.body.images],
           },
-          unit_amount: 1200,
+          unit_amount: ticketPrice,
         },
         quantity: req.body.quantity,
       },
     ],
     mode: 'payment',
+    metadata: {
+      reservationId: req.body.reservationId,
+      movieId: req.body.movieId,
+      showtimeId: req.body.showtimeId,
+    },
+    locale: req.body.locale,
     success_url: `${DOMAIN}success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${DOMAIN}failure?session_id={CHECKOUT_SESSION_ID}`,
   });

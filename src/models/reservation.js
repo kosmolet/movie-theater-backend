@@ -13,6 +13,11 @@ const ReservationSchema = new Schema(
       ref: 'ShowTime',
       required: true,
     },
+    stripeCustomerId: { type: String },
+    stripeAmountCharged: { type: Number },
+    stripeCheckoutSessionId: { type: String },
+    stripePaymentIntentId: { type: String },
+    stripePaymentCreateAt: { type: Date },
   },
   { timestamps: true }
 );
