@@ -18,6 +18,7 @@ const ReservationSchema = new Schema(
     stripeCheckoutSessionId: { type: String },
     stripePaymentIntentId: { type: String },
     stripePaymentCreateAt: { type: Date },
+    isEmailSend: { type: Boolean, default: false, required: true },
   },
   { timestamps: true }
 );

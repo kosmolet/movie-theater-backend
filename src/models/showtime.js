@@ -8,7 +8,6 @@ const ShowTimeSchema = new Schema(
     hallName: { type: String, required: true },
     unavailableSeats: { type: [Number], required: true },
     city: { type: String, required: true },
-    ticketPrice: { type: Number, required: true },
     movie: {
       type: Schema.Types.ObjectId,
       ref: 'Movie',

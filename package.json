@@ -4,7 +4,8 @@
   "description": "movie-theater-backend",
   "main": "src/index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=test mocha --recursive src/test/",
+    "test": "cross-env NODE_ENV=test nyc mocha --recursive src/test/",
+    "coverage": "nyc report --reporter=lcov --reporter=text",
     "dev": "cross-env LOG_LEVEL=debug NODE_ENV=development nodemon | ./node_modules/.bin/pino-pretty",
     "dev-w": "cross-env LOG_LEVEL=debug NODE_ENV=development nodemon",
     "start": "cross-env NODE_ENV=production node src/index.js",
@@ -22,12 +23,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "coveralls": "^3.1.0",
     "eslint": "^7.12.1",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.3.0",
+    "nyc": "^15.1.0",
     "pino-pretty": "^4.3.0",
     "prettier": "^2.1.2"
   },
