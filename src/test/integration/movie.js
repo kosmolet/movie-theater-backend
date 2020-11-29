@@ -19,7 +19,7 @@ describe('GET /', () => {
   });
 });
 
-describe('Testing Movies Endpoints ', () => {
+describe('Movies test suite ', () => {
   beforeEach(() => {
     connect();
   });

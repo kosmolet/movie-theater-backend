@@ -21,7 +21,7 @@ describe('Showtime test suite ', () => {
   };
 
   before(async () => {
-    connect();
+    await connect();
     expectedMovie = new Movie({
       title: 'Spell movieTEST',
       overview: 'overview',
@@ -40,8 +40,12 @@ describe('Showtime test suite ', () => {
   });
 
   after(async () => {
-    await Movie.deleteMany();
-    mongoose.connection.close();
+    try {
+      await Movie.deleteMany();
+      mongoose.connection.close();
+    } catch (e) {
+      mongoose.connection.close();
+    }
   });
 
   describe('POST /api/v1/movies/:movieId/showtimes', () => {

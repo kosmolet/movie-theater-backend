@@ -50,7 +50,7 @@ router.delete('/:reservationId', async (req, res) => {
     );
     return !reservation
       ? res.status(404).json({ message: 'Reservation ID does not exist' })
-      : res.send(reservation);
+      : res.status(204).send(reservation);
   } catch (e) {
     return res.status(500).send(e);
   }
