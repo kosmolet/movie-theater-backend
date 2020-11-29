@@ -50,7 +50,7 @@ router.delete('/:showtimeId', async (req, res) => {
     const showtime = await ShowTime.findByIdAndDelete(req.params.showtimeId);
     return !showtime
       ? res.status(404).json({ message: 'ShowtimeID does not exist' })
-      : res.send(showtime);
+      : res.status(204).json({ message: 'Showtime deleted' });
   } catch (err) {
     return res.status(500).json({ success: false, message: err.message });
   }
