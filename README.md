@@ -102,4 +102,10 @@ https://moviestaden.herokuapp.com/
    
 5. Delete(reservation by Id)
    Route: DELETE 'api/v1/movies/movieId/showtimes/showtimeId/reservations/reservationId'
- 
+   
+     
+`.env` file should include:  
+MONGO_URI='connection string to mongoDB'  
+DOMAIN='http://localhost:3000/'(URL where Stripe response should be returned on FE) 
+PRICE='12500' price for a ticket( multiplied on 100 for stripe)
+STRIPE_SK='stripe secret key'
