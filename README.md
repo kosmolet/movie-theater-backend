@@ -1,8 +1,8 @@
 
 [![Actions Status](https://github.com/kosmolet/movie-theater-backend/workflows/Cinema%20backend/badge.svg?branch=main)](https://github.com/kosmolet/movie-theater-backend/actions)  [![Actions Status](https://github.com/kosmolet/movie-theater-backend/workflows/Run%20Lint/badge.svg?branch=main)](https://github.com/kosmolet/movie-theater-backend/actions) 
-# movie-theater-backend  
+## movie-theater-backend  
 
-## Backend for Moviestaden cinema app  
+# Backend for Moviestaden cinema app  
 
 Deployed to https://moviestaden.herokuapp.com/  
 
@@ -104,7 +104,7 @@ https://moviestaden.herokuapp.com/
    Route: DELETE 'api/v1/movies/movieId/showtimes/showtimeId/reservations/reservationId'
    
      
-`.env` file should include:  
+#### `.env` file should include:  
 * MONGO_URI='connection string to mongoDB'  
 * DOMAIN='http://localhost:3000/' (URL where Stripe response should be returned on FE)   
 * PRICE='12500' price for a ticket( multiplied on 100 for stripe)
