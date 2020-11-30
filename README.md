@@ -92,7 +92,8 @@ https://moviestaden.herokuapp.com/
    
 4. Update(reservation by Id)
    Route: PATCH 'api/v1/movies/movieId/showtimes/showtimeId/reservations/reservationId'
-   Request Body: {any field from POST or any of:  
+   Request Body:  
+   {any field from POST or any of:  
    stripeCustomerId: String,  
    stripeAmountCharged: Number,  
    stripeCheckoutSessionId: String,  
