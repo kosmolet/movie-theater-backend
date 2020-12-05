@@ -6,6 +6,8 @@
 
 Deployed to https://moviestaden.herokuapp.com/  
 
+Firestore version is in [repo](https://github.com/kosmolet/movie-theater-backend-firestore)
+
 Starts with `npm run dev` or `npm run dev-w`
 Runs on Port 5005 or Port specified in `.env` file
 
