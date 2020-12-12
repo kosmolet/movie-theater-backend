@@ -15,7 +15,7 @@ router.get('/:movieId', async (req, res) => {
       ? res.status(404).json({ message: 'Movie with this ID does not exist' })
       : res.send(movie);
   } catch (err) {
-    return res.status(500).send(err);
+    return res.status(500).json({ success: false, message: err.message });
   }
 });
 
@@ -23,9 +23,9 @@ router.post('/', async (req, res) => {
   const movie = new Movie(req.body);
   try {
     await movie.save();
-    res.status(201).send(movie);
-  } catch (e) {
-    res.status(500).send(e);
+    return res.status(201).send(movie);
+  } catch (err) {
+    return res.status(500).json({ success: false, message: err.message });
   }
 });
 
@@ -37,8 +37,8 @@ router.patch('/:movieId', async (req, res) => {
     return !movie
       ? res.status(404).json({ message: 'Movie with this ID does not exist' })
       : res.send(movie);
-  } catch (e) {
-    return res.status(500).send(e);
+  } catch (err) {
+    return res.status(500).json({ success: false, message: err.message });
   }
 });
 
@@ -48,8 +48,8 @@ router.delete('/:movieId', async (req, res) => {
     return !movie
       ? res.status(404).json({ message: 'Movie with this ID does not exist' })
       : res.send(movie);
-  } catch (e) {
-    return res.status(500).send(e);
+  } catch (err) {
+    return res.status(500).json({ success: false, message: err.message });
   }
 });
 
