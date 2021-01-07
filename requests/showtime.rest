@@ -1,0 +1,74 @@
+###1. Get movie
+GET http://localhost:5005/api/v1/movies/5fb92c08f4299e6edcaaa4dd 
+
+###2. Get showtimes
+GET http://localhost:5005/api/v1/movies/5fb92c08f4299e6edcaaa4dd/showtimes/
+
+
+###2. Get showtime by ID
+GET http://localhost:5005/api/v1/movies/5fb9298af4299e6edcaaa4da/showtimes/5fb9e080dbbcf7683c5a5232
+###3.a POST showtime
+POST http://localhost:5005/api/v1/movies/5fb9298af4299e6edcaaa4da/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-07T12:30:00.000Z",
+    "endAt": "2020-12-07T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall TEST",
+    "unavailableSeats": [3,7,22],
+    "city": "Stockholm",
+    "movie": "5fb9298af4299e6edcaaa4da"
+}
+
+###3.a POST showtime inPAST
+POST http://localhost:5005/api/v1/movies/5fb9298af4299e6edcaaa4da/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-11-20T12:30:00.000Z",
+    "endAt": "2020-11-20T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [7,22],
+    "city": "Stockholm",
+    "movie": "5fb9298af4299e6edcaaa4da"
+}
+
+###3.b POST showtime
+POST http://localhost:5005/api/v1/movies/5fb9298af4299e6edcaaa4da/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-07T16:30:00.000Z",
+    "endAt": "2020-12-07T18:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [15],
+    "city": "Stockholm",
+    "movie": "5fb9298af4299e6edcaaa4da"
+}
+
+####3.c
+POST http://localhost:5005/api/v1/movies/5fb9298af4299e6edcaaa4da/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-08T20:00:00.000Z",
+    "endAt": "2020-12-08T22:00:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fb9298af4299e6edcaaa4da"
+}
+
+###3.d PUT showtime
+PATCH http://localhost:5005/api/v1/movies/5fb9298af4299e6edcaaa4da/showtimes/5fb9e080dbbcf7683c5a5232
+content-type: application/json
+
+{
+ 
+    "hallName": "Sollentuna Cinema Hall7"  
+    
+}
+
+
+###5. DELETE showtime by ID
+DELETE http://localhost:5005/api/v1/movies/5fb9298af4299e6edcaaa4da/showtimes/5fb9e080dbbcf7683c5a5232
