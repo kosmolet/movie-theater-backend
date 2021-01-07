@@ -1,0 +1,21 @@
+@BASE_URL=http://localhost:{{$dotenv PORT}}/api/v1
+@MOVIE_ID=5ff791fb588ad13f00201f30
+
+
+### GET all
+GET {{BASE_URL}}/movies
+
+
+### GET item with :id 
+GET {{BASE_URL}}/movies/{{MOVIE_ID}}
+
+### PATCH item with :id
+PATCH {{BASE_URL}}/movies/{{MOVIE_ID}}
+content-type: application/json
+
+{
+    "popularity": 118
+}
+
+### DELETE item with :id 
+DELETE {{BASE_URL}}/movies/{{MOVIE_ID}}

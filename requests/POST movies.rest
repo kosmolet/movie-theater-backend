@@ -1,0 +1,196 @@
+@BASE_URL=http://localhost:{{$dotenv PORT}}/api/v1
+@MOVIE_ID=5fc51c515a11b6195ccfcd70
+
+### GET all
+GET {{BASE_URL}}/movies
+
+### POST
+POST {{BASE_URL}}/movies  
+content-type: application/json
+
+{
+    "title": "Wolfwalkers",
+    "overview": "In a time of superstition and magic, when wolves are seen as demonic and nature an evil to be tamed, a young apprentice hunter comes to Ireland with her father to wipe out the last pack. But when she saves a wild native girl, their friendship leads her to discover the world of the Wolfwalkers and transform her into the very thing her father is tasked to destroy.",
+    "popularity": 140,
+    "poster_path": "/ehAKuE48okTuonq6TpsNQj8vFTC.jpg",
+    "backdrop_path": "/yHtB4KHNigx3ZoxDvQbW2SOXGfq.jpg",
+    "runtime": 103,
+    "genres": ["Fantasy", "Family", "Adventure"],
+    "release_date": "2020-10-26",
+    "tmdb_id": 441130,
+    "status": "Released"
+}
+
+### POST
+POST {{BASE_URL}}/movies 
+content-type: application/json
+
+{
+    "title": "Roald Dahl's The Witches",
+    "overview": "In late 1967, a young orphaned boy goes to live with his loving grandma in the rural Alabama town of Demopolis. As the boy and his grandmother encounter some deceptively glamorous but thoroughly diabolical witches, she wisely whisks him away to a seaside resort. Regrettably, they arrive at precisely the same time that the world's Grand High Witch has gathered.",
+    "popularity": 1867,
+    "poster_path": "/betExZlgK0l7CZ9CsCBVcwO1OjL.jpg",
+    "backdrop_path": "/8rIoyM6zYXJNjzGseT3MRusMPWl.jpg",
+    "runtime": "106",
+    "genres": ["Fantasy","Family", "Adventure", "Comedy", "Horror"],
+    "release_date": "2020-10-26",
+    "tmdb_id": 531219,
+    "status": "Released"
+}
+
+### POST
+POST {{BASE_URL}}/movies  
+content-type: application/json
+
+{
+    "title": "Wonder Woman 1984",
+    "overview": "Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s and finds a formidable foe by the name of the Cheetah.",
+    "popularity": 150,
+    "poster_path": "/di1bCAfGoJ0BzNEavLsPyxQ2AaB.jpg",
+    "backdrop_path": "/egg7KFi18TSQc1s24RMmR9i2zO6.jpg",
+    "runtime": 91,
+    "genres": ["Action", "Fantasy", "Adventure"],
+    "release_date": "2020-12-23",
+    "tmdb_id": 464052,
+    "status": "Released"
+}
+
+### POST
+POST {{BASE_URL}}/movies 
+content-type: application/json
+
+{
+    "title": "Spell",
+    "overview": "A father survives a plane crash in rural Appalachia, but becomes suspicious of the elderly couple who take him in to nurse him back to health with the ancient remedies.",
+    "popularity": 117,
+    "poster_path": "/4rjHhj1BAREc9zNFU8FheLJQdFf.jpg",
+    "backdrop_path": "/5gllGAa3c9UqeRI8r6GXiQJIEtp.jpg",
+    "runtime": 91,
+    "genres": ["Thriller ", "Horror"],
+    "release_date": "2020-10-30",
+    "tmdb_id": 621151,
+    "status": "Released"
+}
+
+### POST
+POST {{BASE_URL}}/movies  
+content-type: application/json
+
+{
+    "title": "Dune",
+    "overview": "Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people. As malevolent forces explode into conflict over the planet's exclusive supply of the most precious resource in existence-a commodity capable of unlocking humanity's greatest potential-only those who can conquer their fear will survive.",
+    "popularity": 138,
+    "poster_path": "/9HNZTw2D3cM1yA08FF5SeWEO9eX.jpg",
+    "backdrop_path": "/wP0X5iQrlt7ojPmWouYPfy8AQtx.jpg",
+    "runtime": 101,
+    "genres": ["Action", "Adventure", "Science Fiction"],
+    "release_date": "2020-11-11",
+    "tmdb_id": 438631,
+    "status": "Released"
+}
+
+### POST
+POST {{BASE_URL}}/movies  
+content-type: application/json
+
+{
+    "title": "Morbius",
+    "overview": "Dangerously ill with a rare blood disorder, and determined to save others suffering his same fate, Dr. Morbius attempts a desperate gamble. What at first appears to be a radical success soon reveals itself to be a remedy potentially worse than the disease.",
+    "popularity": 130,
+    "poster_path": "/4Mdf5XXKcgLWFtMDSJTtelPvjeY.jpg",
+    "backdrop_path": "/kdUArJCSTW8bpJipOqkvCZsVEqi.jpg",
+    "runtime": 90,
+    "genres": ["Action", "Horror", "Fantasy"],
+    "release_date": "2020-11-25",
+    "tmdb_id": 526896,
+    "status": "Released"
+}
+
+### POST
+POST {{BASE_URL}}/movies  
+content-type: application/json
+
+{
+    "title": "The Craft: Legacy",
+    "overview": "An eclectic foursome of aspiring teenage witches get more than they bargained for as they lean into their newfound powers.",
+    "popularity": 107,
+    "poster_path": "/lhMIra0pqWNuD6CIXoTmGwZ0EBS.jpg",
+    "backdrop_path": "/lIE7kfdLBRd0KENNtOaIqPPWNqh.jpg",
+    "runtime": 94,
+    "genres": ["Fantasy", "Horror", "Adventure"],
+    "release_date": "2020-10-28",
+    "tmdb_id": 590995,
+    "status": "Released"
+}
+
+### POST
+POST {{BASE_URL}}/movies 
+content-type: application/json
+
+{
+    "title": "Raya and the Last Dragon",
+    "overview": "Long ago, humans and dragons lived together in harmony. But when an evil force threatened the land, the dragons sacrificed themselves to save humanity. Now, 500 years later, that same evil has returned and it’s up to a lone warrior, Raya, to track down the legendary last dragon to restore the fractured land and its divided people.",
+    "popularity": 100,
+    "poster_path": "/6t7X3LMwVtCubcmk9HWI1M9RtbK.jpg",
+    "backdrop_path": "/jDhBdOotIMIQlgrpGgymr2LmTHe.jpg",
+    "runtime": 121,
+    "genres": ["Action", "Fantasy"],
+    "release_date": "2020-12-07",
+    "tmdb_id": 527774,
+    "status": "Released"
+}
+
+### POST
+POST {{BASE_URL}}/movies  
+content-type: application/json
+
+{
+    "title": "Let Him Go",
+    "overview": "A retired sheriff and his wife fight to rescue their grandson from a dangerous off-grid family upon the death of their son.",
+    "popularity": 51,
+    "poster_path": "/yBZu9MOX38NCshVkHK57GkOps8S.jpg",
+    "backdrop_path": "/abCn6fJjCPEZE3Q2dCmfidMxrEG.jpg",
+    "runtime": 120,
+    "genres": ["Drama", "Crime", "Thriller"],
+    "release_date": "2020-11-05",
+    "tmdb_id": 596161,
+    "status": "Released"
+}
+
+### POST
+POST {{BASE_URL}}/movies  
+content-type: application/json
+
+{
+    "title": "Monster Hunter",
+    "overview": "A portal transports Lt. Artemis and an elite unit of soldiers to a strange world where powerful monsters rule with deadly ferocity. Faced with relentless danger, the team encounters a mysterious hunter who may be their only hope to find a way home.",
+    "popularity": 90,
+    "poster_path": "/6hd2NqGfc2NUm9WZoOygKASuYnl.jpg",
+    "backdrop_path": "/8tNX8s3j1O0eqilOQkuroRLyOZA.jpg",
+    "runtime": 105,
+    "genres": ["Fantasy", "Action", "Adventure"],
+    "release_date": "2020-12-03",
+    "tmdb_id": 458576,
+    "status": "Released"
+}
+
+### POST
+POST {{BASE_URL}}/movies  
+content-type: application/json
+
+{
+    "title": "Borat Subsequent Moviefilm",
+    "overview": "14 years after making a film about his journey across the USA, Borat risks life and limb when he returns to the United States with his young daughter, and reveals more about the culture, the COVID-19 pandemic, and the political elections.",
+    "popularity": 767,
+    "poster_path": "/6agKYU5IQFpuDyUYPu39w7UCRrJ.jpg",
+    "backdrop_path": "/hbrXbVoE0NuA1ORoSGGYNASagrl.jpg",
+    "runtime": 96,
+    "genres": ["Comedy"],
+    "release_date": "2020-10-23",
+    "tmdb_id": 740985,
+    "status": "Released"
+}
+
+#### Get ALL
+GET {{BASE_URL}}/movies/
+
