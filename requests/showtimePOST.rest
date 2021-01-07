@@ -1,0 +1,805 @@
+###1. Get movie
+GET http://localhost:5005/api/v1/movies/5fc51c025a11b6195ccfcd66 
+
+###2. Get showtimes
+GET http://localhost:5005/api/v1/movies/5fc51c025a11b6195ccfcd66/showtimes/
+
+
+###2. Get showtime by ID
+GET http://localhost:5005/api/v1/movies/5fc51c025a11b6195ccfcd66/showtimes/5fb9e080dbbcf7683c5a5232
+###3.a POST showtime
+
+
+
+###3.a POST showtime inPAST
+POST http://localhost:5005/api/v1/movies/5fc51c025a11b6195ccfcd66/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-11-20T12:30:00.000Z",
+    "endAt": "2020-11-20T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [7,22],
+    "city": "Stockholm",
+    "movie": "5fc51c025a11b6195ccfcd66"
+}
+
+####
+POST http://localhost:5005/api/v1/movies/5fc51c025a11b6195ccfcd66/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-27T12:30:00.000Z",
+    "endAt": "2020-12-27T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [3,7,22],
+    "city": "Stockholm",
+    "movie": "5fc51c025a11b6195ccfcd66"
+}
+
+###3.b POST showtime
+POST http://localhost:5005/api/v1/movies/5fc51c025a11b6195ccfcd66/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-07T16:30:00.000Z",
+    "endAt": "2020-12-07T18:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [15],
+    "city": "Stockholm",
+    "movie": "5fc51c025a11b6195ccfcd66"
+}
+
+
+###3.b POST showtime
+POST http://localhost:5005/api/v1/movies/5fc51c025a11b6195ccfcd66/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-15T16:30:00.000Z",
+    "endAt": "2020-12-15T18:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [15],
+    "city": "Stockholm",
+    "movie": "5fc51c025a11b6195ccfcd66"
+}
+
+####3.c
+POST http://localhost:5005/api/v1/movies/5fc51c025a11b6195ccfcd66/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-08T20:00:00.000Z",
+    "endAt": "2020-12-08T22:00:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c025a11b6195ccfcd66"
+}
+
+#####
+POST http://localhost:5005/api/v1/movies/5fc51c025a11b6195ccfcd66/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-30T20:00:00.000Z",
+    "endAt": "2020-12-30T22:00:00.000Z",
+    "hallName": "Solna Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c025a11b6195ccfcd66"
+}
+
+
+----------------------------------#######2nd
+
+###3.a POST showtime inPAST
+POST http://localhost:5005/api/v1/movies/5fc51c245a11b6195ccfcd67/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-11-20T12:30:00.000Z",
+    "endAt": "2020-11-20T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [7,22],
+    "city": "Stockholm",
+    "movie": "5fc51c245a11b6195ccfcd67"
+}
+
+####
+POST http://localhost:5005/api/v1/movies/5fc51c245a11b6195ccfcd67/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-27T12:30:00.000Z",
+    "endAt": "2020-12-27T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [3,7,22],
+    "city": "Stockholm",
+    "movie": "5fc51c245a11b6195ccfcd67"
+}
+
+###3.b POST showtime
+POST http://localhost:5005/api/v1/movies/5fc51c245a11b6195ccfcd67/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-07T16:30:00.000Z",
+    "endAt": "2020-12-07T18:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [15,17],
+    "city": "Stockholm",
+    "movie": "5fc51c245a11b6195ccfcd67"
+}
+
+
+###3.b POST showtime
+POST http://localhost:5005/api/v1/movies/5fc51c245a11b6195ccfcd67/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-15T16:30:00.000Z",
+    "endAt": "2020-12-15T18:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [15],
+    "city": "Stockholm",
+    "movie": "5fc51c245a11b6195ccfcd67"
+}
+
+####3.c
+POST http://localhost:5005/api/v1/movies/5fc51c245a11b6195ccfcd67/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-08T20:00:00.000Z",
+    "endAt": "2020-12-08T22:00:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c245a11b6195ccfcd67"
+}
+
+#####
+POST http://localhost:5005/api/v1/movies/5fc51c245a11b6195ccfcd67/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-30T20:00:00.000Z",
+    "endAt": "2020-12-30T22:00:00.000Z",
+    "hallName": "Solna Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c245a11b6195ccfcd67"
+}
+
+#################################3rd#########
+
+###3.a POST showtime inPAST
+POST http://localhost:5005/api/v1/movies/5fc51c265a11b6195ccfcd68/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-11-20T12:30:00.000Z",
+    "endAt": "2020-11-20T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [7,22],
+    "city": "Stockholm",
+    "movie": "5fc51c265a11b6195ccfcd68"
+}
+
+####
+POST http://localhost:5005/api/v1/movies/5fc51c265a11b6195ccfcd68/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-27T12:30:00.000Z",
+    "endAt": "2020-12-27T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [3,7,22],
+    "city": "Stockholm",
+    "movie": "5fc51c265a11b6195ccfcd68"
+}
+
+###3.b POST showtime
+POST http://localhost:5005/api/v1/movies/5fc51c265a11b6195ccfcd68/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-07T16:30:00.000Z",
+    "endAt": "2020-12-07T18:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [15,17],
+    "city": "Stockholm",
+    "movie": "5fc51c265a11b6195ccfcd68"
+}
+
+
+###3.b POST showtime
+POST http://localhost:5005/api/v1/movies/5fc51c265a11b6195ccfcd68/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-15T16:30:00.000Z",
+    "endAt": "2020-12-15T18:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [15],
+    "city": "Stockholm",
+    "movie": "5fc51c265a11b6195ccfcd68"
+}
+
+####3.c
+POST http://localhost:5005/api/v1/movies/5fc51c265a11b6195ccfcd68/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-08T20:00:00.000Z",
+    "endAt": "2020-12-08T22:00:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c265a11b6195ccfcd68"
+}
+
+#####
+POST http://localhost:5005/api/v1/movies/5fc51c265a11b6195ccfcd68/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-30T20:00:00.000Z",
+    "endAt": "2020-12-30T22:00:00.000Z",
+    "hallName": "Solna Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c265a11b6195ccfcd68"
+}
+
+
+##########4th
+
+
+POST http://localhost:5005/api/v1/movies/5fc51c295a11b6195ccfcd69/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-11-20T12:30:00.000Z",
+    "endAt": "2020-11-20T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [7,22],
+    "city": "Stockholm",
+    "movie": "5fc51c295a11b6195ccfcd69"
+}
+
+####
+POST http://localhost:5005/api/v1/movies/5fc51c295a11b6195ccfcd69/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-27T12:30:00.000Z",
+    "endAt": "2020-12-27T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [3,7,22],
+    "city": "Stockholm",
+    "movie": "5fc51c295a11b6195ccfcd69"
+}
+
+###3.b POST showtime
+POST http://localhost:5005/api/v1/movies/5fc51c295a11b6195ccfcd69/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-07T16:30:00.000Z",
+    "endAt": "2020-12-07T18:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [15,17],
+    "city": "Stockholm",
+    "movie": "5fc51c295a11b6195ccfcd69"
+}
+
+
+###3.b POST showtime
+POST http://localhost:5005/api/v1/movies/5fc51c295a11b6195ccfcd69/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-15T16:30:00.000Z",
+    "endAt": "2020-12-15T18:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [15],
+    "city": "Stockholm",
+    "movie": "5fc51c295a11b6195ccfcd69"
+}
+
+####3.c
+POST http://localhost:5005/api/v1/movies/5fc51c295a11b6195ccfcd69/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-08T20:00:00.000Z",
+    "endAt": "2020-12-08T22:00:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c295a11b6195ccfcd69"
+}
+
+#####
+POST http://localhost:5005/api/v1/movies/5fc51c295a11b6195ccfcd69/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-30T20:00:00.000Z",
+    "endAt": "2020-12-30T22:00:00.000Z",
+    "hallName": "Solna Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c295a11b6195ccfcd69"
+}
+
+
+##########5th
+
+
+POST http://localhost:5005/api/v1/movies/5fc51c2d5a11b6195ccfcd6a/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-11-20T12:30:00.000Z",
+    "endAt": "2020-11-20T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [7,22],
+    "city": "Stockholm",
+    "movie": "5fc51c2d5a11b6195ccfcd6a"
+}
+
+####
+POST http://localhost:5005/api/v1/movies/5fc51c2d5a11b6195ccfcd6a/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-27T12:30:00.000Z",
+    "endAt": "2020-12-27T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [3,7,22],
+    "city": "Stockholm",
+    "movie": "5fc51c2d5a11b6195ccfcd6a"
+}
+
+###3.b POST showtime
+POST http://localhost:5005/api/v1/movies/5fc51c2d5a11b6195ccfcd6a/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-07T16:30:00.000Z",
+    "endAt": "2020-12-07T18:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [15,17],
+    "city": "Stockholm",
+    "movie": "5fc51c2d5a11b6195ccfcd6a"
+}
+
+
+###3.b POST showtime
+POST http://localhost:5005/api/v1/movies/5fc51c2d5a11b6195ccfcd6a/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-15T16:30:00.000Z",
+    "endAt": "2020-12-15T18:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [15],
+    "city": "Stockholm",
+    "movie": "5fc51c2d5a11b6195ccfcd6a"
+}
+
+####3.c
+POST http://localhost:5005/api/v1/movies/5fc51c2d5a11b6195ccfcd6a/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-08T20:00:00.000Z",
+    "endAt": "2020-12-08T22:00:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c2d5a11b6195ccfcd6a"
+}
+
+#####
+POST http://localhost:5005/api/v1/movies/5fc51c2d5a11b6195ccfcd6a/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-30T20:00:00.000Z",
+    "endAt": "2020-12-30T22:00:00.000Z",
+    "hallName": "Solna Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c2d5a11b6195ccfcd6a"
+}
+
+
+-----
+#################################6rd#########
+
+###3.a POST showtime inPAST
+POST http://localhost:5005/api/v1/movies/5fc51c315a11b6195ccfcd6b/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-11-20T12:30:00.000Z",
+    "endAt": "2020-11-20T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [7,22],
+    "city": "Stockholm",
+    "movie": "5fc51c315a11b6195ccfcd6b"
+}
+
+####
+POST http://localhost:5005/api/v1/movies/5fc51c315a11b6195ccfcd6b/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-27T12:30:00.000Z",
+    "endAt": "2020-12-27T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [3,7,22],
+    "city": "Stockholm",
+    "movie": "5fc51c315a11b6195ccfcd6b"
+}
+
+###3.b POST showtime
+POST http://localhost:5005/api/v1/movies/5fc51c315a11b6195ccfcd6b/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-07T16:30:00.000Z",
+    "endAt": "2020-12-07T18:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [15,17],
+    "city": "Stockholm",
+    "movie": "5fc51c315a11b6195ccfcd6b"
+}
+
+
+###3.b POST showtime
+POST http://localhost:5005/api/v1/movies/5fc51c315a11b6195ccfcd6b/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-15T16:30:00.000Z",
+    "endAt": "2020-12-15T18:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [15],
+    "city": "Stockholm",
+    "movie": "5fc51c315a11b6195ccfcd6b"
+}
+
+####3.c
+POST http://localhost:5005/api/v1/movies/5fc51c315a11b6195ccfcd6b/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-08T20:00:00.000Z",
+    "endAt": "2020-12-08T22:00:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c315a11b6195ccfcd6b"
+}
+
+#####
+POST http://localhost:5005/api/v1/movies/5fc51c315a11b6195ccfcd6b/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-30T20:00:00.000Z",
+    "endAt": "2020-12-30T22:00:00.000Z",
+    "hallName": "Solna Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c315a11b6195ccfcd6b"
+}
+
+
+##########7th
+
+
+POST http://localhost:5005/api/v1/movies/5fc51c345a11b6195ccfcd6c/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-11-20T12:30:00.000Z",
+    "endAt": "2020-11-20T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [7,22],
+    "city": "Stockholm",
+    "movie": "5fc51c345a11b6195ccfcd6c"
+}
+
+####
+POST http://localhost:5005/api/v1/movies/5fc51c345a11b6195ccfcd6c/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-27T12:30:00.000Z",
+    "endAt": "2020-12-27T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [3,7,22],
+    "city": "Stockholm",
+    "movie": "5fc51c345a11b6195ccfcd6c"
+}
+
+###3.b POST showtime
+POST http://localhost:5005/api/v1/movies/5fc51c345a11b6195ccfcd6c/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-07T16:30:00.000Z",
+    "endAt": "2020-12-07T18:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [15,17],
+    "city": "Stockholm",
+    "movie": "5fc51c345a11b6195ccfcd6c"
+}
+
+
+###3.b POST showtime
+POST http://localhost:5005/api/v1/movies/5fc51c345a11b6195ccfcd6c/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-15T16:30:00.000Z",
+    "endAt": "2020-12-15T18:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [15],
+    "city": "Stockholm",
+    "movie": "5fc51c345a11b6195ccfcd6c"
+}
+
+####3.c
+POST http://localhost:5005/api/v1/movies/5fc51c345a11b6195ccfcd6c/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-08T20:00:00.000Z",
+    "endAt": "2020-12-08T22:00:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c345a11b6195ccfcd6c"
+}
+
+#####
+POST http://localhost:5005/api/v1/movies/5fc51c345a11b6195ccfcd6c/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-30T20:00:00.000Z",
+    "endAt": "2020-12-30T22:00:00.000Z",
+    "hallName": "Solna Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c345a11b6195ccfcd6c"
+}
+
+
+##########8th
+
+
+POST http://localhost:5005/api/v1/movies/5fc51c4b5a11b6195ccfcd6d/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-11-20T12:30:00.000Z",
+    "endAt": "2020-11-20T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [7,22],
+    "city": "Stockholm",
+    "movie": "5fc51c4b5a11b6195ccfcd6d"
+}
+
+####
+POST http://localhost:5005/api/v1/movies/5fc51c4b5a11b6195ccfcd6d/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-27T12:30:00.000Z",
+    "endAt": "2020-12-27T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [3,7,22],
+    "city": "Stockholm",
+    "movie": "5fc51c4b5a11b6195ccfcd6d"
+}
+
+###3.b POST showtime
+POST http://localhost:5005/api/v1/movies/5fc51c4b5a11b6195ccfcd6d/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-07T16:30:00.000Z",
+    "endAt": "2020-12-07T18:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [15,17],
+    "city": "Stockholm",
+    "movie": "5fc51c4b5a11b6195ccfcd6d"
+}
+
+
+###3.b POST showtime
+POST http://localhost:5005/api/v1/movies/5fc51c4b5a11b6195ccfcd6d/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-15T16:30:00.000Z",
+    "endAt": "2020-12-15T18:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [15],
+    "city": "Stockholm",
+    "movie": "5fc51c4b5a11b6195ccfcd6d"
+}
+
+####3.c
+POST http://localhost:5005/api/v1/movies/5fc51c4b5a11b6195ccfcd6d/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-08T20:00:00.000Z",
+    "endAt": "2020-12-08T22:00:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c4b5a11b6195ccfcd6d"
+}
+
+#####
+POST http://localhost:5005/api/v1/movies/5fc51c4b5a11b6195ccfcd6d/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-30T20:00:00.000Z",
+    "endAt": "2020-12-30T22:00:00.000Z",
+    "hallName": "Solna Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c4b5a11b6195ccfcd6d"
+}
+
+
+######
+GET http://localhost:5005/api/v1/movies/5fc51c4b5a11b6195ccfcd6d/showtimes
+
+######
+DELETE http://localhost:5005/api/v1/movies/5fc51c4b5a11b6195ccfcd6d/showtimes/5fc525255a11b6195ccfcdab
+
+####3.c
+POST http://localhost:5005/api/v1/movies/5fc51c4d5a11b6195ccfcd6e/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-08T20:00:00.000Z",
+    "endAt": "2020-12-08T22:00:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c4d5a11b6195ccfcd6e"
+}
+
+#####
+POST http://localhost:5005/api/v1/movies/5fc51c4d5a11b6195ccfcd6e/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-30T20:00:00.000Z",
+    "endAt": "2020-12-30T22:00:00.000Z",
+    "hallName": "Solna Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c4d5a11b6195ccfcd6e"
+}
+
+
+
+######
+####3.c
+POST http://localhost:5005/api/v1/movies/5fc51c4f5a11b6195ccfcd6f/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-08T20:00:00.000Z",
+    "endAt": "2020-12-08T22:00:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c4f5a11b6195ccfcd6f"
+}
+
+#####
+POST http://localhost:5005/api/v1/movies/5fc51c4f5a11b6195ccfcd6f/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-30T20:00:00.000Z",
+    "endAt": "2020-12-30T22:00:00.000Z",
+    "hallName": "Solna Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c4f5a11b6195ccfcd6f"
+}
+
+
+######
+####3.c
+POST http://localhost:5005/api/v1/movies/5fc51c515a11b6195ccfcd70/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-08T20:00:00.000Z",
+    "endAt": "2020-12-08T22:00:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c515a11b6195ccfcd70"
+}
+
+#####
+POST http://localhost:5005/api/v1/movies/5fc51c515a11b6195ccfcd70/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-30T20:00:00.000Z",
+    "endAt": "2020-12-30T22:00:00.000Z",
+    "hallName": "Solna Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c515a11b6195ccfcd70"
+}
+
+
+####3.c
+POST http://localhost:5005/api/v1/movies/5fc51c4d5a11b6195ccfcd6e/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-08T20:00:00.000Z",
+    "endAt": "2020-12-08T22:00:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [1,5,25,2],
+    "city": "Stockholm",
+    "movie": "5fc51c4d5a11b6195ccfcd6e"
+}
+
+#####
+POST http://localhost:5005/api/v1/movies/5fc51c4d5a11b6195ccfcd6e/showtimes
+content-type: application/json
+
+{
+    "startAt": "2020-12-30T20:00:00.000Z",
+    "endAt": "2020-12-30T22:00:00.000Z",
+    "hallName": "Solna Cinema Hall",
+    "unavailableSeats": [1,5,25],
+    "city": "Stockholm",
+    "movie": "5fc51c4d5a11b6195ccfcd6e"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
