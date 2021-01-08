@@ -1,140 +1,135 @@
 @BASE_URL=http://localhost:{{$dotenv PORT}}/api/v1
 @MOVIE_ID=5fc51c025a11b6195ccfcd66
-@SHOW_TIME_ID=5ff7969b588ad13f00201f31
-@DATE=2021-01-07
-@DATE_PAST=2020-12-07
+@SHOW_TIME_ID=5fc51c4b5a11b6195ccfcd6d
+@DATE1=2021-12-13
+@DATE2=2021-12-20
+@DATE3=2021-12-30
+
 ### GET all showtimes
 GET {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes/
 
 ### GET showtime with :id 
 GET {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes/{{SHOW_TIME_ID}} 
  
-### POST showtime
+### POST showtime DATE 1-mor
 POST {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes
 content-type: application/json
 
 {
-    "startAt": "{{DATE}}T12:30:00.000Z",
-    "endAt": "{{DATE}}T14:30:00.000Z",
+    "startAt": "{{DATE1}}T12:30:00.000Z",
+    "endAt": "{{DATE1}}T14:30:00.000Z",
     "hallName": "Stockholm Cinema Hall",
     "unavailableSeats": [7,22],
     "city": "Stockholm",
     "movie": "{{MOVIE_ID}}"
 }
 
-### POST showtime
+### POST showtime DATE 1-aft
 POST {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes
 content-type: application/json
 
 {
-    "startAt": "{{DATE}}T12:30:00.000Z",
-    "endAt": "{{DATE}}T14:30:00.000Z",
+    "startAt": "{{DATE1}}T16:30:00.000Z",
+    "endAt": "{{DATE1}}T18:30:00.000Z",
     "hallName": "Stockholm Cinema Hall",
     "unavailableSeats": [3,7,22],
     "city": "Stockholm",
     "movie": "{{MOVIE_ID}}"
 }
 
-###3.b POST showtime
+### POST showtime DATE 1-eve
 POST {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes
 content-type: application/json
 
 {
-    "startAt": "{{DATE}}T16:30:00.000Z",
-    "endAt": "{{DATE}}T18:30:00.000Z",
+    "startAt": "{{DATE1}}T20:30:00.000Z",
+    "endAt": "{{DATE1}}T22:30:00.000Z",
     "hallName": "Stockholm Cinema Hall",
-    "unavailableSeats": [15],
+    "unavailableSeats": [15,16],
     "city": "Stockholm",
     "movie": "{{MOVIE_ID}}"
 }
 
 
-###3.b POST showtime
+### POST showtime DATE 2-mor
 POST {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes
 content-type: application/json
 
 {
-    "startAt": "{{DATE}}T16:30:00.000Z",
-    "endAt": "{{DATE}}T18:30:00.000Z",
-    "hallName": "Stockholm Cinema Hall",
-    "unavailableSeats": [15],
-    "city": "Stockholm",
-    "movie": "{{MOVIE_ID}}"
-}
-
-### POST showtime
-POST {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes
-content-type: application/json
-
-{
-    "startAt": "{{DATE}}T20:00:00.000Z",
-    "endAt": "{{DATE}}T22:00:00.000Z",
-    "hallName": "Stockholm Cinema Hall",
-    "unavailableSeats": [1,5,25],
-    "city": "Stockholm",
-    "movie": "{{MOVIE_ID}}"
-}
-
-### POST showtime
-POST {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes
-content-type: application/json
-
-{
-    "startAt": "{{DATE}}T20:00:00.000Z",
-    "endAt": "{{DATE}}T22:00:00.000Z",
-    "hallName": "Solna Cinema Hall",
-    "unavailableSeats": [1,5,25],
-    "city": "Stockholm",
-    "movie": "{{MOVIE_ID}}"
-}
-
-
-###### inThePAST START #########
-
-### POST showtime
-POST {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes
-content-type: application/json
-
-{
-    "startAt": "{{DATE_PAST}}T12:30:00.000Z",
-    "endAt": "{{DATE_PAST}}T14:30:00.000Z",
+    "startAt": "{{DATE2}}T12:30:00.000Z",
+    "endAt": "{{DATE2}}T14:30:00.000Z",
     "hallName": "Stockholm Cinema Hall",
     "unavailableSeats": [7,22],
     "city": "Stockholm",
     "movie": "{{MOVIE_ID}}"
 }
 
-### POST showtime
+### POST showtime DATE 2-aft
 POST {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes
 content-type: application/json
 
 {
-    "startAt": "{{DATE_PAST}}T12:30:00.000Z",
-    "endAt": "{{DATE_PAST}}T14:30:00.000Z",
+    "startAt": "{{DATE2}}T16:30:00.000Z",
+    "endAt": "{{DATE2}}T18:30:00.000Z",
     "hallName": "Stockholm Cinema Hall",
     "unavailableSeats": [3,7,22],
     "city": "Stockholm",
     "movie": "{{MOVIE_ID}}"
 }
 
-### POST showtime
+### POST showtime DATE 2-eve
 POST {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes
 content-type: application/json
 
 {
-    "startAt": "{{DATE_PAST}}T16:30:00.000Z",
-    "endAt": "{{DATE_PAST}}T18:30:00.000Z",
+    "startAt": "{{DATE2}}T20:30:00.000Z",
+    "endAt": "{{DATE2}}T22:30:00.000Z",
     "hallName": "Stockholm Cinema Hall",
-    "unavailableSeats": [15,17],
+    "unavailableSeats": [1],
     "city": "Stockholm",
     "movie": "{{MOVIE_ID}}"
 }
 
-###### inThePAST END #########
- 
- 
  
 
+### POST showtime DATE 3-mor
+POST {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes
+content-type: application/json
+
+{
+    "startAt": "{{DATE3}}T12:30:00.000Z",
+    "endAt": "{{DATE3}}T14:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [7,22],
+    "city": "Stockholm",
+    "movie": "{{MOVIE_ID}}"
+}
+
+### POST showtime DATE 3-aft
+POST {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes
+content-type: application/json
+
+{
+    "startAt": "{{DATE3}}T16:30:00.000Z",
+    "endAt": "{{DATE3}}T18:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [3,22],
+    "city": "Stockholm",
+    "movie": "{{MOVIE_ID}}"
+}
+
+### POST showtime DATE 3-eve
+POST {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes
+content-type: application/json
+
+{
+    "startAt": "{{DATE3}}T20:30:00.000Z",
+    "endAt": "{{DATE3}}T22:30:00.000Z",
+    "hallName": "Stockholm Cinema Hall",
+    "unavailableSeats": [15,16],
+    "city": "Stockholm",
+    "movie": "{{MOVIE_ID}}"
+}
 
 
 

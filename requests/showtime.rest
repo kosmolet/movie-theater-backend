@@ -1,74 +1,22 @@
-###1. Get movie
-GET http://localhost:5005/api/v1/movies/5fb92c08f4299e6edcaaa4dd 
+@BASE_URL=http://localhost:{{$dotenv PORT}}/api/v1
+@MOVIE_ID=5fc51c025a11b6195ccfcd66
+@SHOW_TIME_ID=5fc51c4b5a11b6195ccfcd6d
+ 
+### GET all showtimes
+GET {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes/
 
-###2. Get showtimes
-GET http://localhost:5005/api/v1/movies/5fb92c08f4299e6edcaaa4dd/showtimes/
+### GET showtime with :id 
+GET {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes/{{SHOW_TIME_ID}} 
 
-
-###2. Get showtime by ID
-GET http://localhost:5005/api/v1/movies/5fb9298af4299e6edcaaa4da/showtimes/5fb9e080dbbcf7683c5a5232
-###3.a POST showtime
-POST http://localhost:5005/api/v1/movies/5fb9298af4299e6edcaaa4da/showtimes
-content-type: application/json
-
-{
-    "startAt": "2020-12-07T12:30:00.000Z",
-    "endAt": "2020-12-07T14:30:00.000Z",
-    "hallName": "Stockholm Cinema Hall TEST",
-    "unavailableSeats": [3,7,22],
-    "city": "Stockholm",
-    "movie": "5fb9298af4299e6edcaaa4da"
-}
-
-###3.a POST showtime inPAST
-POST http://localhost:5005/api/v1/movies/5fb9298af4299e6edcaaa4da/showtimes
-content-type: application/json
-
-{
-    "startAt": "2020-11-20T12:30:00.000Z",
-    "endAt": "2020-11-20T14:30:00.000Z",
-    "hallName": "Stockholm Cinema Hall",
-    "unavailableSeats": [7,22],
-    "city": "Stockholm",
-    "movie": "5fb9298af4299e6edcaaa4da"
-}
-
-###3.b POST showtime
-POST http://localhost:5005/api/v1/movies/5fb9298af4299e6edcaaa4da/showtimes
-content-type: application/json
-
-{
-    "startAt": "2020-12-07T16:30:00.000Z",
-    "endAt": "2020-12-07T18:30:00.000Z",
-    "hallName": "Stockholm Cinema Hall",
-    "unavailableSeats": [15],
-    "city": "Stockholm",
-    "movie": "5fb9298af4299e6edcaaa4da"
-}
-
-####3.c
-POST http://localhost:5005/api/v1/movies/5fb9298af4299e6edcaaa4da/showtimes
-content-type: application/json
-
-{
-    "startAt": "2020-12-08T20:00:00.000Z",
-    "endAt": "2020-12-08T22:00:00.000Z",
-    "hallName": "Stockholm Cinema Hall",
-    "unavailableSeats": [1,5,25],
-    "city": "Stockholm",
-    "movie": "5fb9298af4299e6edcaaa4da"
-}
-
-###3.d PUT showtime
-PATCH http://localhost:5005/api/v1/movies/5fb9298af4299e6edcaaa4da/showtimes/5fb9e080dbbcf7683c5a5232
+### PATCH showtime with :id 
+PATCH {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes/{{SHOW_TIME_ID}} 
 content-type: application/json
 
 {
  
-    "hallName": "Sollentuna Cinema Hall7"  
+    "hallName": "Sollentuna Cinema Hall"  
     
 }
 
-
-###5. DELETE showtime by ID
-DELETE http://localhost:5005/api/v1/movies/5fb9298af4299e6edcaaa4da/showtimes/5fb9e080dbbcf7683c5a5232
+### DELETE showtime with :id 
+DELETE {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes/{{SHOW_TIME_ID}} 
