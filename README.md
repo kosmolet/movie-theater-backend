@@ -1,18 +1,25 @@
 
 [![Actions Status](https://github.com/kosmolet/movie-theater-backend/workflows/Cinema%20backend/badge.svg?branch=main)](https://github.com/kosmolet/movie-theater-backend/actions)  [![Actions Status](https://github.com/kosmolet/movie-theater-backend/workflows/Run%20Lint/badge.svg?branch=main)](https://github.com/kosmolet/movie-theater-backend/actions) 
-## movie-theater-backend  
-
-# Backend for Moviestaden cinema app  
+## Backend for Moviestaden cinema app  
 
 Deployed to https://moviestaden.herokuapp.com/  
 
-##### Firestore version is in [repo](https://github.com/kosmolet/movie-theater-backend-firestore)
+##### Firestore version is in [repository](https://github.com/kosmolet/movie-theater-backend-firestore)  
 
-Starts with `npm run dev` or `npm run dev-w`
+### Setup  
+Create `.env` file in the root directory of the project, add to the file:    
+`MONGO_URI=connection string to mongoDB`  
+`DOMAIN='http://localhost:3000/'` (URL where Stripe response should be returned on fronend)   
+`PRICE=12500` (real price a ticket should be multiplied on 100 for stripe)
+`STRIPE_SK=stripe secret key`   
+`NODE_ENV=development`
+`PORT=5005`   
+
+### Start
+Run `npm run dev` 
 Runs on Port 5005 or Port specified in `.env` file
 
 ### Routes:  
-https://moviestaden.herokuapp.com/  
 
 ##### Movies  
  1. Create new movie  
@@ -105,11 +112,3 @@ https://moviestaden.herokuapp.com/
    
 5. Delete(reservation by Id)
    Route: DELETE 'api/v1/movies/movieId/showtimes/showtimeId/reservations/reservationId'
-   
-     
-#### `.env` file should include:  
-* MONGO_URI='connection string to mongoDB'  
-* DOMAIN='http://localhost:3000/' (URL where Stripe response should be returned on FE)   
-* PRICE='12500' price for a ticket( multiplied on 100 for stripe)
-* STRIPE_SK='stripe secret key'  
-* NODE_ENV and PORT - optional
