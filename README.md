@@ -2,10 +2,12 @@
 [![Actions Status](https://github.com/kosmolet/movie-theater-backend/workflows/Cinema%20backend/badge.svg?branch=main)](https://github.com/kosmolet/movie-theater-backend/actions)  [![Actions Status](https://github.com/kosmolet/movie-theater-backend/workflows/Run%20Lint/badge.svg?branch=main)](https://github.com/kosmolet/movie-theater-backend/actions) 
 ## Backend for Moviestaden cinema app   
 
-#### Firestore version is in [repository](https://github.com/kosmolet/movie-theater-backend-firestore)  
+#### Firestore version is in this [repository](https://github.com/kosmolet/movie-theater-backend-firestore)  
 
-### Setup  
+### Setup 
+
 Create `.env` file in the root directory of the project, add to the file:    
+
 `MONGO_URI=connection string to mongoDB`  
 `DOMAIN='http://localhost:3000/'` (URL where Stripe response should be returned on fronend)   
 `PRICE=12500` (real price a ticket should be multiplied on 100 for stripe)
@@ -14,10 +16,11 @@ Create `.env` file in the root directory of the project, add to the file:
 `PORT=5005`   
 
 ### Start
+
 Run `npm run dev` 
 Runs on Port 5005 or Port specified in `.env` file
 
-### Routes:  
+### Routes  
 
 ##### Movies  
  1. Create new movie  
