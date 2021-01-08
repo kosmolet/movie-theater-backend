@@ -1,10 +1,8 @@
 
 [![Actions Status](https://github.com/kosmolet/movie-theater-backend/workflows/Cinema%20backend/badge.svg?branch=main)](https://github.com/kosmolet/movie-theater-backend/actions)  [![Actions Status](https://github.com/kosmolet/movie-theater-backend/workflows/Run%20Lint/badge.svg?branch=main)](https://github.com/kosmolet/movie-theater-backend/actions) 
-## Backend for Moviestaden cinema app  
+## Backend for Moviestaden cinema app   
 
-Deployed to https://moviestaden.herokuapp.com/  
-
-##### Firestore version is in [repository](https://github.com/kosmolet/movie-theater-backend-firestore)  
+#### Firestore version is in [repository](https://github.com/kosmolet/movie-theater-backend-firestore)  
 
 ### Setup  
 Create `.env` file in the root directory of the project, add to the file:    
