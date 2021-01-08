@@ -1,0 +1,41 @@
+@BASE_URL=http://localhost:{{$dotenv PORT}}/api/v1
+@MOVIE_ID=5fc51c025a11b6195ccfcd66
+@SHOW_TIME_ID=5fc51c4b5a11b6195ccfcd6d
+
+@RESERVATION_ID=5fc51c4b5a11b6195ccfcd6d
+ 
+#### Get ALL reservations:
+GET {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes/{{SHOW_TIME_ID}}
+
+### GET reservations from showtime: 
+GET {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes/{{SHOW_TIME_ID}}/reservations
+
+### GET reservation with :id
+GET {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes/{{SHOW_TIME_ID}}/reservations/{{RESERVATION_ID}}
+
+### POST reservation
+POST {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes/{{SHOW_TIME_ID}}/reservations
+content-type: application/json
+
+{
+    "username": "smbd1",
+    "email": "buyermail123@gmail.com",
+    "isPaymentSucceed": false,
+    "seats": [19,20],
+    "totalPrice": 40,
+    "showtime": "{{MOVIE_ID}}",
+    "isEmailSend": false
+ 
+}
+
+### PATCH reservations with :id
+PATCH {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes/{{SHOW_TIME_ID}}/reservations/{{RESERVATION_ID}}
+content-type: application/json
+
+{
+    "isEmailSend": true
+
+}
+
+### DELETE reservations with :id  
+DELETE {{BASE_URL}}/movies/{{MOVIE_ID}}/showtimes/{{SHOW_TIME_ID}}/reservations/{{RESERVATION_ID}}
